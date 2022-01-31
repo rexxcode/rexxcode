@@ -26,12 +26,5 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="{{asset('style/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-	<script src="">
-		@if(session()->has('success'))
-			toaster.success('{{session('success')}}','BERHASIL!');
-		@elseif(session()->has('error'))
-			toaster.error('{{session('error')}}','GAGAL'); 
-		@endif
-	</script>
 </body>
 </html>
