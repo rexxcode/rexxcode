@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class DbpostController extends Controller
@@ -27,7 +28,8 @@ class DbpostController extends Controller
     public function create()
     {
         //
-        return view('dashboard.post.create');
+        $cat = Category::all();
+        return view('dashboard.post.create',compact('cat'));
     }
 
     /**

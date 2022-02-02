@@ -16,7 +16,7 @@
 		@foreach($categories as $cat)
 			<div class="col-md-4">
 				<a href="/?category={{$cat->slug}}">
-				<div class="card bg-dark text-white">
+				<div class="card bg-dark text-white mb-4">
 				  <img src="https://source.unsplash.com/720x720/?{{$cat->name}}" class="card-img" alt="">
 				  <div class="card-img-overlay d-flex align-items-center p-0">
 				    <h5 class="card-title flex-fill fs-3 text-center p-3"> {{$cat->name}}</h5>
