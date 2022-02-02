@@ -10,7 +10,7 @@
 @section('title','REXXCODE - Share Anything You Know');
 
 @section('content')
-<!-- @include('components._jumbotron') -->
+
 <div class="container">
 	<div class="row justify-content-start py-5">
 		@foreach($categories as $cat)

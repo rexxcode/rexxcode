@@ -33,8 +33,8 @@
 				<td>{{ $post->title }}</td>
 	          	<td>{!! $post->category->name !!}</td>
 	          	<td>
-	          		<a href="{{route('artikel.show',$post->slug)}}" class="btn btn-success btn-md"><i class="fas fa-eye"></i></a>
-	          		<a href="{{route('artikel.edit',$post->slug)}}" class="btn btn-warning btn-md"><i class="fas fa-edit"></i></a>
+	          		<a href="{{route('artikel.show',$post->slug)}}" class="btn btn-success btn-md mb-2"><i class="fas fa-eye"></i></a>
+	          		<a href="{{route('artikel.edit',$post->slug)}}" class="btn btn-warning btn-md mb-2"><i class="fas fa-edit"></i></a>
 	          		{{-- <a href="{{route('artikel.destroy',$post->slug)}}" class="btn btn-danger btn-md"><i class="fas fa-times-circle"></i></a> --}}
 
 					  <form action="{{route ('artikel.destroy',$post->slug)}}" method="post">
