@@ -5,23 +5,20 @@
 @section('content')
 	<div class="card border-0 rounded shadow-md">
 		<div class="card-body">
+		
 				<form method="POST" action="" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
-					<!-- <div class="form-group">
-						<label class="h5">Gambar</label>
-						<input type="file" name="image" class="form-control mb-3">
-						<img src="{{Storage::url('public/blogs/').$post->image}}" width="150" alt="" class="rounded mb-3">
-					</div> -->
+					
 					<div class="form-group">
 						<label>Judul</label>
 						<input type="text" class="form-control mb-3" value="{{ old('title', $post->title) }}" name="title" placeholder="Masukkan judul ...">
 					</div>
 					<div class="form-group mb-3">
 						<label>Body</label>
-						<textarea class="form-control  @error('content') is-invalid @enderror" name="content" rows="5"placeholder="Masukkan konten blog ...">{{ old('body', $post->body) }}</textarea>
+						<textarea class="form-control  @error('body') is-invalid @enderror" id="editor" name="body" rows="5">{{ old('body', $post->body) }}</textarea>
 						 <!-- error message untuk content -->
-                        @error('content')
+                        @error('body')
                             <div class="alert alert-danger mt-2">
                                 {{ $message }}
                             </div>

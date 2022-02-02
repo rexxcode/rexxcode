@@ -17,6 +17,8 @@
 					<p>
 						{!!$post->body!!}
 					</p>
+
+					<a href="{{route('artikel.index')}}" class="btn btn-warning btn-md">Kembali</a>
 				</div>
 			</div>
 		</div>

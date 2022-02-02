@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('style/dashboard.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('style/style.css')}}">
 </head>
-<body>
+<body style="background-color: #fff">
 	
 @include('components._header')
 
@@ -40,7 +40,7 @@
 	<script src="{{asset('style/dashboard.js')}}"></script>
 	<script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 	<script>
-	    CKEDITOR.replace('content' );
+	    CKEDITOR.replace('body' );
 	</script>
 	<script src="">
 		@if(session()->has('success'))

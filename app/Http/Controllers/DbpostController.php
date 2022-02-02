@@ -27,7 +27,7 @@ class DbpostController extends Controller
     public function create()
     {
         //
-        return "tambah data";
+        return view('dashboard.post.create');
     }
 
     /**
