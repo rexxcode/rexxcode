@@ -76,8 +76,9 @@ class DbpostController extends Controller
     public function edit($id)
     {
         //
+        $cat = Category::all();
         $post = Post::where('slug',$id)->first();
-        return view('dashboard/post/edit',compact('post'));
+        return view('dashboard/post/edit',compact(['post','cat']));
     }
 
     /**
@@ -87,9 +88,19 @@ class DbpostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
         //
+        $post = Post::where('slug',$id)->first();
+        $post->title = $request->title;
+        $post->slug = $request->slug;
+        $post->excerpt = $request->excerpt;
+        $post->category_id = $request->kategori;
+        $post->body = $request->body;
+        $post->save();
+        return redirect()->route('artikel.index')->with('success','Artikel berhasil diubah');
+
+
     }
 
     /**

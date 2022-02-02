@@ -26,7 +26,7 @@
 			</div>
 			<div class="form-group">
 				<label>Excerpt</label>
-				<textarea class="form-control mb-3" value="{{old('excerpt')}}" name="excerpt"></textarea>
+				<textarea class="form-control mb-3" value="" name="excerpt">{{old('excerpt')}}</textarea>
 			</div>
             <div class="form-group">
                 <label for="">Kategori</label>
