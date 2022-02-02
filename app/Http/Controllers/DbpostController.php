@@ -41,6 +41,15 @@ class DbpostController extends Controller
     public function store(Request $request)
     {
         //
+        Post::create([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'category_id' => $request->kategori,
+            'user_id' => $request->userid,
+            'excerpt' => $request->excerpt,
+            'body' => $request->body
+        ]);
+        return redirect()->route('artikel.index')->with('success','Artiekl berhasil di tambahkan');
     }
 
     /**

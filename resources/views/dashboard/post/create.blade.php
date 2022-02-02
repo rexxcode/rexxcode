@@ -7,6 +7,7 @@
 @section('content')
 <div class="card border-0 rounded shadow-md">
 	<div class="card-body">
+        <h3>Tulis Artikel</h3>
 		<form method="POST" action="{{route('artikel.store')}}" enctype="multipart/form-data">
 			@csrf
 			<div class="form-group">
@@ -19,6 +20,14 @@
                 @enderror
                 <!-- error message untuk content -->
 			</div>
+			<div class="form-group">
+				<label>Slug</label>
+				<input type="text" class="form-control mb-3" value="{{old('slug')}}"  name="slug" placeholder="Masukkan slug ...">
+			</div>
+			<div class="form-group">
+				<label>Excerpt</label>
+				<textarea class="form-control mb-3" value="{{old('excerpt')}}" name="excerpt"></textarea>
+			</div>
             <div class="form-group">
                 <label for="">Kategori</label>
                 <select name="kategori" id="" class="form-control mb-3">
@@ -28,6 +37,7 @@
                     @endforeach
                 </select>
             </div>
+            <input type="hidden" name="userid" value="{{auth()->user()->id}}">
 			<div class="form-group mb-3">
 				<label>Konten</label>
 				<textarea class="form-control  @error('body') is-invalid @enderror" name="body" rows="5"placeholder="Masukkan artikel ...">{{ old('body') }}</textarea>
